@@ -40,10 +40,12 @@ mqtt_password: "********"  # replace with your actual password
 update_interval: 1  # every second
 dry_run: false
 ```
+
 # Command line usage
 ```bash
 warp3 -h
 ```
+
 ```bash
 usage: warp3 [-h] [--config-path CONFIG_PATH] [--mqtt-broker MQTT_BROKER]
              [--mqtt-port MQTT_PORT] [--mqtt-topic MQTT_TOPIC]
