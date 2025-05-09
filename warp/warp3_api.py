@@ -3,14 +3,18 @@ Created on 2025-05-09
 
 @author: wf
 """
+
 import logging
+
 import requests
+
+
 class Warp3Api:
     """API client for TinkerForge/Warp3 Wallbox"""
 
     def __init__(self, host):
         """Initialize with wallbox host"""
-        self.host = host.rstrip('/')
+        self.host = host.rstrip("/")
         self.logger = logging.getLogger(__name__)
 
     def api_get(self, cmd):
@@ -56,11 +60,8 @@ class Warp3Api:
         """
         update_success = False
         try:
-            url= f"{self.host}/meters/{meter_id}/update"
-            http_response = requests.post(
-                url,
-                data=f"[{value}]"
-            )
+            url = f"{self.host}/meters/{meter_id}/update"
+            http_response = requests.post(url, data=f"[{value}]")
             if http_response.status_code == 200 and not http_response.text:
                 self.logger.info(f"✅ {value} Watt set")
                 update_success = True

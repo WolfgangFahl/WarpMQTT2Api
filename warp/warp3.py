@@ -3,18 +3,21 @@ Created on 09.05.2025
 
 @author: wf
 """
-import json
+
 import argparse
+import json
 import logging
-from datetime import  datetime
 import sys
-from dataclasses import dataclass
 from argparse import Namespace
+from dataclasses import dataclass
+from datetime import datetime
+
 from lodstorage.yamlable import lod_storable
 
 from warp.mqtt_client import MqttClient
 from warp.mqtt_config import MqttConfig
 from warp.warp3_api import Warp3Api
+
 
 @dataclass
 class MeterReading:
@@ -27,7 +30,7 @@ class MeterReading:
         """Convert timestamp string to datetime object"""
         return datetime.strptime(self.time_stamp, "%Y-%m-%dT%H:%M:%S")
 
-    def active_power(self,prev:"MeterReading")->float:
+    def active_power(self, prev: "MeterReading") -> float:
         """
         calculate the active power
         """
@@ -37,8 +40,9 @@ class MeterReading:
         energy_delta = (self.kWh_in - prev.kWh_in) - (self.kWh_out - prev.kWh_out)
 
         # Power in watts
-        active_power= (energy_delta * 1000) / time_delta
+        active_power = (energy_delta * 1000) / time_delta
         return round(active_power)
+
 
 @lod_storable
 class WallboxConfig:
@@ -72,7 +76,7 @@ class WallboxConfig:
                 in_field=args.in_field,  # Added new field
                 out_field=args.out_field,  # Added new field
                 time_field=args.time_field,  # Added new field
-                meter_id=args.meter_id  # Added this
+                meter_id=args.meter_id,  # Added this
             )
         return config
 
@@ -90,28 +94,25 @@ class WallboxConfig:
         parser.add_argument(
             "--power-tag",
             help="Tag in MQTT data containing power information",
-            default=cls.power_tag
+            default=cls.power_tag,
         )
         parser.add_argument(
             "--in-field",
             help="Field name in MQTT data containing energy input",
-            default=cls.in_field
+            default=cls.in_field,
         )
         parser.add_argument(
             "--out-field",
             help="Field name in MQTT data containing energy output",
-            default=cls.out_field
+            default=cls.out_field,
         )
         parser.add_argument(
             "--time-field",
             help="Field name in MQTT data containing timestamp",
-            default=cls.time_field
+            default=cls.time_field,
         )
         parser.add_argument(
-            "--meter-id",
-            type=int,
-            help="Meter ID to use",
-            default=cls.meter_id
+            "--meter-id", type=int, help="Meter ID to use", default=cls.meter_id
         )
 
     @classmethod
@@ -138,15 +139,11 @@ class WallboxConfig:
         timestamp_str = payload.get(self.time_field)
 
         # Create current reading
-        current = MeterReading(
-            kWh_in=e_in,
-            kWh_out=e_out,
-            time_stamp=timestamp_str
-        )
+        current = MeterReading(kWh_in=e_in, kWh_out=e_out, time_stamp=timestamp_str)
 
         # If we don't have a previous reading, store this one and return fallback power
-        if not hasattr(self, '_last_reading'):
-            power=None
+        if not hasattr(self, "_last_reading"):
+            power = None
         else:
             power = current.active_power(self._last_reading)
         # Update stored reading
@@ -178,7 +175,7 @@ class PowerMeter:
             self.logger.error("❌ Cannot connect to Warp3 API")
             return False
 
-        firmware = version_info.get('firmware', 'unknown')
+        firmware = version_info.get("firmware", "unknown")
         self.logger.info(f"✅ Connected to Warp3 - Firmware version: {firmware}")
 
         # Check meter
@@ -191,12 +188,11 @@ class PowerMeter:
         self.logger.info(f"✅ Meter {meter_id} configured successfully")
         return True
 
-
     def handle_message(self, msg):
         """Handle incoming MQTT message"""
         try:
             payload = json.loads(msg.payload.decode())
-            active_power=self.wallbox_config.calcPower(payload)
+            active_power = self.wallbox_config.calcPower(payload)
             if active_power:
                 self.update_wallbox(active_power)
         except json.JSONDecodeError as jde:
@@ -269,6 +265,7 @@ class PowerMeter:
             self.wallbox_config = WallboxConfig.ofArgs(self.args)
 
         self.start()
+
 
 def main():
     """Main entry point"""

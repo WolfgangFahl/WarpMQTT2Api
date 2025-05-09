@@ -7,7 +7,6 @@ Created on 09.05.2025
 import logging
 
 import paho.mqtt.client as mqtt
-
 from bptools.mqtt_config import MqttConfig
 
 logger = logging.getLogger(__name__)
@@ -43,7 +42,6 @@ class MqttClient:
         if isinstance(msg, mqtt.MQTTMessage):
             logger.debug(f"Message received: {msg.topic}")
             self.callback(msg)
-
 
     def run(self):
         """Run the client loop"""
