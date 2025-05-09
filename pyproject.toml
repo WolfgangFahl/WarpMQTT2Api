@@ -28,6 +28,19 @@ classifiers = [
   "Programming Language :: Python :: 3.13"
 ]
 
+keywords = [
+  "Tinkerforge",
+  "Warp3",
+  "MQTT",
+  "Warp",
+  "solar charging",
+  "PV surplus",
+  "wallbox integration",
+  "energy monitoring",
+  "smart charging",
+  "home automation"
+]
+
 dynamic = ["version", "description"]
 
 [project.urls]
