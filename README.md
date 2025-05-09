@@ -13,7 +13,7 @@ Tinkerforge Warp MQTT 2 API bridge
 ```bash
 git clone https://github.com/WolfgangFahl/WarpMQTT2Api
 pip install .
-``
+```
 ## 🧪 Example Configuration
 
 Store this as `~/.warp3/config.yaml`:
