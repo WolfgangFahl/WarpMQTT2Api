@@ -31,9 +31,9 @@ classifiers = [
 dynamic = ["version", "description"]
 
 [project.urls]
-Home = "http://media.bitplan.com/index.php?title=Bitplan-tools"
-Documentation = "http://media.bitplan.com/index.php?title=Bitplan-tools"
-Source = "git.bitplan.com:/srv/git/source/python/bitplan-tools"
+Home = "https://github.com/WolfgangFahl/WarpMQTT2Api"
+Documentation = "https://wiki.bitplan.com/index.php/WarpMQTT2Ap"
+Source = "https://github.com/WolfgangFahl/WarpMQTT2Api"
 
 [tool.hatch.version]
 path = "warp/__init__.py"
