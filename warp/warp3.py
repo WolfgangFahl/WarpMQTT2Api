@@ -43,12 +43,14 @@ class MeterReading:
 @lod_storable
 class WallboxConfig:
     """Configuration for the Warp3 wallbox"""
+
     wallbox_host: str = "http://warp3.mydomain"
-    power_tag: str = "eHZ"  # Put this back
-    in_field: str = "E_in"  # New field for energy input
-    out_field: str = "E_out"  # New field for energy output
-    time_field: str = "Time"  # New field for timestamp
-    meter_id: int = 1  # Put this back
+    # example Tasmota reading
+    power_tag: str = "eHZ"  # json tag for the payload content
+    in_field: str = "E_in"  # field for energy input
+    out_field: str = "E_out"  # field for energy output
+    time_field: str = "Time"  # field for timestamp
+    meter_id: int = 2  # id of the meter configured
 
     @classmethod
     def ofArgs(cls, args: Namespace = None):
