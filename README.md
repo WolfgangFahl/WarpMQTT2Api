@@ -9,6 +9,21 @@ Tinkerforge Warp MQTT 2 API bridge
 [![API Docs](https://img.shields.io/badge/API-Documentation-blue)](https://WolfgangFahl.github.io/WarpMQTT2Api/)
 [![License](https://img.shields.io/github/license/WolfgangFahl/WarpMQTT2Api.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
+## Motivation
+Tasmota based power meter sending MQTT messages such as:
+```json
+{"Time":"2025-05-10T08:24:13","eHZ":{"E_in":67299.845,"E_out":50268.783,"Power":0,"Power2":4111}}
+```
+see [Tasmota scripts](https://stromleser.de/blogs/scripts/ehm-zahler-tasmota-scripts-stromleser-wifi)
+
+While the values can be send directly in the script e.g.
+via:
+```basj
+=>WebQuery http://192.168.XXX.XXX/meters/1/update POST [Content-Type:application/json] [%sml[3]%]
+```
+
+there is still a problem with the sign of the power.
+
 ## Installation
 ```bash
 git clone https://github.com/WolfgangFahl/WarpMQTT2Api
@@ -103,12 +118,53 @@ warp3 --config-path $HOME/.warp3/config.yaml
 2025-05-09 16:33:33,286 - INFO - Power tag: eHZ
 2025-05-09 16:33:33,286 - INFO - Meter ID: 2
 2025-05-09 16:33:33,303 - INFO - ✅ Connected to Warp3 - Firmware version: 2.8.0+6810d7c9
-2025-05-09 16:33:33,312 - INFO - ✅ Meter 2 configured successfully
-2025-05-09 16:33:33,315 - INFO - Starting MQTT loop
+2025-05-09 16:33:33,312 - INFO - ✅ Meter 'Hausanschluss' at location 4 measures: 74: Summe der Phasenwirkleistungen (Bezug - Einspeisung)
 2025-05-09 16:33:33,316 - INFO - Connected to MQTT broker at mqtt.bitplan.com
 2025-05-09 16:33:33,316 - INFO - Subscribed to tele/tasmota_B13330/SENSOR
 2025-05-09 16:33:43,423 - INFO - Power value: -360W
 2025-05-09 16:33:43,433 - INFO - ✅ -360 Watt set
 ```
+
+# Config on raspberry pi
+```bash
+## startup script
+#!/bin/bash
+# WF 2025-05-10
+# Start Warp3 with nohup and log to /var/log/warp3
+
+LOGDIR="/var/log/warp3"
+LOGFILE="$LOGDIR/warp3.log"
+APP="warp3"
+OPTIONS="--config-path /home/wf/.warp3/config.yaml"
+
+sudo mkdir -p "$LOGDIR"
+sudo chmod 755 "$LOGDIR"
+sudo chown wf:wf $LOGDIR
+
+timestamp=$(date '+%F %T')
+echo "$timestamp - INFO - 🚀 Starting warp3" >> "$LOGFILE"
+
+nohup "$APP" $OPTIONS >> "$LOGFILE" 2>&1 &
+```
+## crontab entry
+```bash
+# run warp3 on reboot
+@reboot /home/wf/bin/warp3start
+```
+
+## logrotate entry
+```bash
+cat /etc/logrotate.d/warp3
+/var/log/warp3/warp3.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    delaycompress
+    copytruncate
+}
+``
+
 
 
