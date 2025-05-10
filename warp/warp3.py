@@ -1,5 +1,5 @@
 """
-Created on 09.05.2025
+Created on 2025-05-09
 
 @author: wf
 """
@@ -167,26 +167,34 @@ class PowerMeter:
         )
         self.logger = logging.getLogger(__name__)
 
-    def check_warp3_availability(self):
-        """Check Warp3 version and meter config"""
+    def check_warp3_availability(self) -> bool:
+        """
+        Check availability of Warp3 API by verifying firmware version and meter configuration.
+
+        Returns:
+            True if both firmware info and meter config are available, else False.
+        """
         # Check version
         version_info = self.warp3_api.get_version()
         if not version_info:
             self.logger.error("❌ Cannot connect to Warp3 API")
-            return False
+            available = False
+        else:
+            firmware = version_info.get("firmware", "unknown")
+            self.logger.info(f"✅ Connected to Warp3 - Firmware version: {firmware}")
 
-        firmware = version_info.get("firmware", "unknown")
-        self.logger.info(f"✅ Connected to Warp3 - Firmware version: {firmware}")
+            # Check meter
+            meter_id = self.wallbox_config.meter_id
+            meter_config = self.warp3_api.get_meter_config(meter_id)
+            if not meter_config:
+                self.logger.error(f"❌ Meter {meter_id} not available")
+                available = False
+            else:
+                description = self.warp3_api.describe_meter(meter_config[1])
+                self.logger.info(f"✅ {description}")
+                available = True
 
-        # Check meter
-        meter_id = self.wallbox_config.meter_id
-        meter_config = self.warp3_api.get_meter_config(meter_id)
-        if not meter_config:
-            self.logger.error(f"❌ Meter {meter_id} not available")
-            return False
-
-        self.logger.info(f"✅ Meter {meter_id} configured successfully")
-        return True
+        return available
 
     def handle_message(self, msg):
         """Handle incoming MQTT message"""

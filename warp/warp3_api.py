@@ -70,3 +70,66 @@ class Warp3Api:
         except Exception as e:
             self.logger.error(f"Error updating meter: {e}")
         return update_success
+
+    def describe_meter(self, meter: dict) -> str:
+        """
+        Describe the meter configuration using value_id explanations.
+
+        Args:
+            meter: The meter configuration dictionary.
+
+        Returns:
+            A human-readable description string.
+        """
+        name = meter.get('display_name', 'Unknown')
+        location = meter.get('location', 'N/A')
+        value_ids = meter.get('value_ids', [])
+        values_explained = ', '.join(
+            f"{vid}: {self.explain_value_id(vid)}" for vid in value_ids
+        )
+        description = f"Meter '{name}' at location {location} measures: {values_explained}"
+        return description
+
+    def explain_value_id(self,value_id: int) -> str:
+        explanations = {
+            1: "Spannung L1-N",
+            2: "Spannung L2-N",
+            3: "Spannung L3-N",
+            4: "Spannung L1-L2",
+            5: "Spannung L2-L3",
+            6: "Spannung L3-L1",
+            7: "Durchschnittliche Phasenspannung",
+            8: "Durchschnitt Spannung L1-L2, L2-L3, L3-L1",
+            13: "Strom (Bezug + Einspeisung)",
+            17: "Strom (Bezug + Einspeisung)",
+            21: "Strom (Bezug + Einspeisung)",
+            25: "Neutralleiterstrom",
+            29: "Durchschnitt der Phasenströme",
+            33: "Summe der Phasenströme",
+            39: "Wirkleistung (Bezug - Einspeisung)",
+            48: "Wirkleistung (Bezug - Einspeisung)",
+            57: "Wirkleistung (Bezug - Einspeisung)",
+            74: "Summe der Phasenwirkleistungen (Bezug - Einspeisung)",
+            83: "Blindleistung (induktiv - kapazitiv)",
+            91: "Blindleistung (induktiv - kapazitiv)",
+            99: "Blindleistung (induktiv - kapazitiv)",
+            115: "Summe der Phasenblindleistungen",
+            122: "Scheinleistung (Bezug + Einspeisung)",
+            130: "Scheinleistung (Bezug + Einspeisung)",
+            138: "Scheinleistung (Bezug + Einspeisung)",
+            154: "Summe der Phasenscheinleistungen",
+            209: "Wirkenergie Bezug (seit Herstellung)",
+            210: "Wirkenergie Bezug (seit letztem Zurücksetzen)",
+            211: "Wirkenergie Einspeisung (seit Herstellung)",
+            212: "Wirkenergie Einspeisung (seit letztem Zurücksetzen)",
+            213: "Wirkenergie Bezug + Einspeisung (seit Herstellung)",
+            214: "Wirkenergie Bezug + Einspeisung (seit letztem Zurücksetzen)",
+            277: "Blindenergie induktiv + kapazitiv (seit Herstellung)",
+            353: "Leistungsfaktor (gerichtet)",
+            354: "Leistungsfaktor (gerichtet)",
+            355: "Leistungsfaktor (gerichtet)",
+            356: "Summe der gerichteten Leistungsfaktoren",
+            364: "Netzfrequenz",
+        }
+        return explanations.get(value_id, "Unknown value_id")
+
