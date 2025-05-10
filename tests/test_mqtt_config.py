@@ -26,7 +26,6 @@ class TestMQTTConfig(BaseTest):
             mqtt_topic="test/topic",
             mqtt_username="user",
             mqtt_password="pass",
-            update_interval=15,
             dry_run=True
         )
         config = MqttConfig.ofArgs(args)
@@ -35,5 +34,4 @@ class TestMQTTConfig(BaseTest):
         self.assertEqual(config.mqtt_topic, "test/topic")
         self.assertEqual(config.mqtt_username, "user")
         self.assertEqual(config.mqtt_password, "pass")
-        self.assertEqual(config.update_interval, 15)
         self.assertTrue(config.dry_run)
