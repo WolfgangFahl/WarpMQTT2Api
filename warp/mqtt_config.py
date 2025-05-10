@@ -19,7 +19,6 @@ class MqttConfig:
     mqtt_topic: str = "tele/data"
     mqtt_username: Optional[str] = None
     mqtt_password: Optional[str] = None
-    update_interval: int = 10  # seconds
     dry_run: bool = False
 
     @classmethod
@@ -42,7 +41,6 @@ class MqttConfig:
                 mqtt_topic=args.mqtt_topic,
                 mqtt_username=args.mqtt_username,
                 mqtt_password=args.mqtt_password,
-                update_interval=args.update_interval,
                 dry_run=args.dry_run,
             )
         return config
@@ -69,12 +67,6 @@ class MqttConfig:
         )
         parser.add_argument(
             "--mqtt-password", help="MQTT password", default=cls.mqtt_password
-        )
-        parser.add_argument(
-            "--update-interval",
-            type=int,
-            help="Minimum update interval in seconds",
-            default=cls.update_interval,
         )
         parser.add_argument(
             "--dry-run", action="store_true", help="Run without updating the wallbox"

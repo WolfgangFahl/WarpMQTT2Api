@@ -16,6 +16,7 @@ class Warp3Api:
         """Initialize with wallbox host"""
         self.host = host.rstrip("/")
         self.logger = logging.getLogger(__name__)
+        self.meter_values={}
 
     def api_get(self, cmd):
         """
@@ -63,7 +64,12 @@ class Warp3Api:
             url = f"{self.host}/meters/{meter_id}/update"
             http_response = requests.post(url, data=f"[{value}]")
             if http_response.status_code == 200 and not http_response.text:
-                self.logger.info(f"✅ {value} Watt set")
+
+                prev=self.meter_values.get(meter_id)
+                if not prev or prev!=value:
+                    msg=f"✅ {value} Watt set for meter {meter_id}"
+                    self.logger.info(msg)
+                self.meter_values[meter_id]=value
                 update_success = True
             else:
                 self.logger.error(f"❌ Failed to update: {http_response.text}")

@@ -11,7 +11,7 @@ import sys
 from argparse import Namespace
 from dataclasses import dataclass
 from datetime import datetime
-
+import threading
 from lodstorage.yamlable import lod_storable
 
 from warp.mqtt_client import MqttClient
@@ -50,11 +50,13 @@ class WallboxConfig:
 
     wallbox_host: str = "http://warp3.mydomain"
     # example Tasmota reading
-    power_tag: str = "eHZ"  # json tag for the payload content
-    in_field: str = "E_in"  # field for energy input
-    out_field: str = "E_out"  # field for energy output
-    time_field: str = "Time"  # field for timestamp
-    meter_id: int = 2  # id of the meter configured
+    power_tag: str = "eHZ"        # json tag for the payload content
+    in_field: str = "E_in"        # field for energy input
+    out_field: str = "E_out"      # field for energy output
+    time_field: str = "Time"      # field for timestamp
+    meter_id: int = 2             # id of the meter configured
+    update_interval:float = 1.0   # how often the API should fed
+
 
     @classmethod
     def ofArgs(cls, args: Namespace = None):
@@ -72,11 +74,12 @@ class WallboxConfig:
         else:
             config = cls(
                 wallbox_host=args.wallbox_host,
-                power_tag=args.power_tag,  # Added this
-                in_field=args.in_field,  # Added new field
-                out_field=args.out_field,  # Added new field
-                time_field=args.time_field,  # Added new field
-                meter_id=args.meter_id,  # Added this
+                power_tag=args.power_tag,
+                in_field=args.in_field,
+                out_field=args.out_field,
+                time_field=args.time_field,
+                meter_id=args.meter_id,
+                update_interval=args.update_interval,
             )
         return config
 
@@ -113,6 +116,12 @@ class WallboxConfig:
         )
         parser.add_argument(
             "--meter-id", type=int, help="Meter ID to use", default=cls.meter_id
+        )
+        parser.add_argument(
+            "--update-interval",
+            type=float,
+            help="Minimum update interval in seconds",
+            default=cls.update_interval,
         )
 
     @classmethod
@@ -155,8 +164,14 @@ class PowerMeter:
     """Active power meter for Warp3 Wallbox"""
 
     def __init__(self):
+        """
+        constructor
+        """
         self.logger = logging.getLogger(__name__)
         self.warp3_api = None
+        self._timer = None
+        self._latest_active_power = None
+        self._active_power_lock = threading.Lock()
 
     def setup_logging(self, debug=False):
         level = logging.DEBUG if debug else logging.INFO
@@ -166,6 +181,12 @@ class PowerMeter:
             handlers=[logging.StreamHandler(sys.stdout)],
         )
         self.logger = logging.getLogger(__name__)
+
+    def schedule_update(self):
+        """Schedule next update using a timer"""
+        self._timer = threading.Timer(self.wallbox_config.update_interval, self.send_update)
+        self._timer.daemon = True
+        self._timer.start()
 
     def check_warp3_availability(self) -> bool:
         """
@@ -211,11 +232,20 @@ class PowerMeter:
     def update_wallbox(self, power_value):
         """Send power value to wallbox"""
         self.logger.info(f"Power value: {power_value}W")
+        with self._active_power_lock:
+            self._latest_active_power = power_value
 
-        if not self.mqtt_config.dry_run:
+    def send_update(self):
+        """
+        Send latest stored power value to wallbox
+        this is called regularly as per the scheduled interval
+        """
+        with self._active_power_lock:
+            power_value = self._latest_active_power
+        if power_value is not None:
             self.warp3_api.update_meter(power_value, self.wallbox_config.meter_id)
-        else:
-            self.logger.info(f"DRY RUN: would update to {power_value}W")
+        #re-schedule
+        self.schedule_update()
 
     def start(self):
         """Start the power meter"""
@@ -237,6 +267,9 @@ class PowerMeter:
         if not self.check_warp3_availability():
             self.logger.error("Cannot connect to Warp3 - exiting")
             sys.exit(1)
+
+        if not self.mqtt_config.dry_run:
+            self.schedule_update()
 
         # Create and run client
         client = MqttClient(self.mqtt_config, callback=self.handle_message)
