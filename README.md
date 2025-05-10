@@ -26,6 +26,7 @@ Store this as `~/.warp3/config.yaml`:
 # Wallbox
 wallbox_host: "http://wallbox" # replace with your wallbox address
 power_tag: "eHZ"
+power_field: "Power2"
 in_field: "E_in"
 out_field: "E_out"
 time_field: "Time"
@@ -47,13 +48,48 @@ warp3 -h
 ```
 
 ```bash
+warp3 -h
 usage: warp3 [-h] [--config-path CONFIG_PATH] [--mqtt-broker MQTT_BROKER]
              [--mqtt-port MQTT_PORT] [--mqtt-topic MQTT_TOPIC]
              [--mqtt-username MQTT_USERNAME] [--mqtt-password MQTT_PASSWORD]
-             [--update-interval UPDATE_INTERVAL] [--dry-run]
-             [--wallbox-host WALLBOX_HOST] [--power-tag POWER_TAG]
-             [--in-field IN_FIELD] [--out-field OUT_FIELD]
-             [--time-field TIME_FIELD] [--meter-id METER_ID] [--debug]
+             [--dry-run] [--wallbox-host WALLBOX_HOST] [--power-tag POWER_TAG]
+             [--power-field POWER_FIELD] [--in-field IN_FIELD]
+             [--out-field OUT_FIELD] [--time-field TIME_FIELD]
+             [--meter-id METER_ID] [--update-interval UPDATE_INTERVAL]
+             [--debug]
+
+MQTT to Warp3 Wallbox Middleware
+
+options:
+  -h, --help            show this help message and exit
+  --config-path CONFIG_PATH
+                        Path to YAML configuration file
+  --mqtt-broker MQTT_BROKER
+                        MQTT broker address
+  --mqtt-port MQTT_PORT
+                        MQTT broker port
+  --mqtt-topic MQTT_TOPIC
+                        MQTT topic to subscribe to
+  --mqtt-username MQTT_USERNAME
+                        MQTT username
+  --mqtt-password MQTT_PASSWORD
+                        MQTT password
+  --dry-run             Run without updating the wallbox
+  --wallbox-host WALLBOX_HOST
+                        Wallbox host URL
+  --power-tag POWER_TAG
+                        Tag in MQTT data containing power information
+  --power-field POWER_FIELD
+                        Field name in MQTT data containing active power value
+  --in-field IN_FIELD   Field name in MQTT data containing energy input
+  --out-field OUT_FIELD
+                        Field name in MQTT data containing energy output
+  --time-field TIME_FIELD
+                        Field name in MQTT data containing timestamp
+  --meter-id METER_ID   Meter ID to use
+  --update-interval UPDATE_INTERVAL
+                        Minimum update interval in seconds
+  --debug               Enable debug logging
 
 ```
 
