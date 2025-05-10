@@ -41,7 +41,7 @@ class MeterReading:
 
         # Power in watts
         active_power = (energy_delta * 1000) / time_delta
-        return round(active_power)
+        return active_power
 
 
 @lod_storable
@@ -51,6 +51,7 @@ class WallboxConfig:
     wallbox_host: str = "http://warp3.mydomain"
     # example Tasmota reading
     power_tag: str = "eHZ"        # json tag for the payload content
+    power_field: str = "Power2"   # active power (always positive)
     in_field: str = "E_in"        # field for energy input
     out_field: str = "E_out"      # field for energy output
     time_field: str = "Time"      # field for timestamp
@@ -75,6 +76,7 @@ class WallboxConfig:
             config = cls(
                 wallbox_host=args.wallbox_host,
                 power_tag=args.power_tag,
+                power_field=args.power_field,
                 in_field=args.in_field,
                 out_field=args.out_field,
                 time_field=args.time_field,
@@ -98,6 +100,11 @@ class WallboxConfig:
             "--power-tag",
             help="Tag in MQTT data containing power information",
             default=cls.power_tag,
+        )
+        parser.add_argument(
+            "--power-field",
+            help="Field name in MQTT data containing active power value",
+            default=cls.power_field,
         )
         parser.add_argument(
             "--in-field",
@@ -139,26 +146,35 @@ class WallboxConfig:
         Returns:
             float: Calculated power in watts
         """
+        # get the timestamp
+        timestamp_str = payload.get(self.time_field)
         # Get the data from the payload
         data = payload.get(self.power_tag, {})
 
         # Extract values
         e_in = data.get(self.in_field)
         e_out = data.get(self.out_field)
-        timestamp_str = payload.get(self.time_field)
+        power_magnitude = data.get(self.power_field)
 
         # Create current reading
         current = MeterReading(kWh_in=e_in, kWh_out=e_out, time_stamp=timestamp_str)
-
         # If we don't have a previous reading, store this one and return fallback power
         if not hasattr(self, "_last_reading"):
-            power = None
+            active_power = None
         else:
-            power = current.active_power(self._last_reading)
+            # calc power roughly from meter reading
+            active_power = current.active_power(self._last_reading)
+            # if we have a precise power magnitude we will use it:
+            if power_magnitude:
+                delta_in = e_in - self._last_reading.kWh_in
+                delta_out = e_out - self._last_reading.kWh_out
+                sign = 1 if delta_in >= delta_out else -1
+                active_power=sign*power_magnitude
+            active_power=round(active_power)
+
         # Update stored reading
         self._last_reading = current
-        return power
-
+        return active_power
 
 class PowerMeter:
     """Active power meter for Warp3 Wallbox"""
