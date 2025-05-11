@@ -23,6 +23,8 @@ via:
 ```
 
 there is still a problem with the sign of the power.
+See also https://www.tinkerunity.org/topic/13014-tasmota-mqtt-middleware/
+
 
 ## Installation
 ```bash
