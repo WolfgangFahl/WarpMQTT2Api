@@ -411,6 +411,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warp.warp3.PowerMeter.check_warp3_availability" class="md-nav__link">
     <span class="md-ellipsis">
       check_warp3_availability
@@ -432,6 +441,24 @@
   <a href="#warp.warp3.PowerMeter.maininstance" class="md-nav__link">
     <span class="md-ellipsis">
       maininstance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.schedule_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      schedule_update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.send_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_update
     </span>
   </a>
   
@@ -549,6 +576,15 @@
   <a href="#warp.warp3_api.Warp3Api.api_get" class="md-nav__link">
     <span class="md-ellipsis">
       api_get
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp.warp3_api.Warp3Api.describe_meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      describe_meter
     </span>
   </a>
   
@@ -802,6 +838,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warp.warp3.PowerMeter.check_warp3_availability" class="md-nav__link">
     <span class="md-ellipsis">
       check_warp3_availability
@@ -823,6 +868,24 @@
   <a href="#warp.warp3.PowerMeter.maininstance" class="md-nav__link">
     <span class="md-ellipsis">
       maininstance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.schedule_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      schedule_update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#warp.warp3.PowerMeter.send_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      send_update
     </span>
   </a>
   
@@ -946,6 +1009,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#warp.warp3_api.Warp3Api.describe_meter" class="md-nav__link">
+    <span class="md-ellipsis">
+      describe_meter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#warp.warp3_api.Warp3Api.get_meter_config" class="md-nav__link">
     <span class="md-ellipsis">
       get_meter_config
@@ -1032,7 +1104,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Created on 09.05.2025</p>
+      <p>Created on 2025-05-09</p>
 <p>@author: wf</p>
 
 
@@ -1512,15 +1584,7 @@
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span>
-<span class="normal">85</span>
-<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lod_storable</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lod_storable</span>
 <span class="k">class</span> <span class="nc">MqttConfig</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for the MQTT to Warp3 middleware&quot;&quot;&quot;</span>
 
@@ -1529,7 +1593,6 @@
     <span class="n">mqtt_topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;tele/data&quot;</span>
     <span class="n">mqtt_username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">mqtt_password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">update_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># seconds</span>
     <span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="nd">@classmethod</span>
@@ -1552,7 +1615,6 @@
                 <span class="n">mqtt_topic</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="p">,</span>
                 <span class="n">mqtt_username</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_username</span><span class="p">,</span>
                 <span class="n">mqtt_password</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_password</span><span class="p">,</span>
-                <span class="n">update_interval</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
                 <span class="n">dry_run</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">config</span>
@@ -1579,12 +1641,6 @@
         <span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
             <span class="s2">&quot;--mqtt-password&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;MQTT password&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">mqtt_password</span>
-        <span class="p">)</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-            <span class="s2">&quot;--update-interval&quot;</span><span class="p">,</span>
-            <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
-            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimum update interval in seconds&quot;</span><span class="p">,</span>
-            <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
             <span class="s2">&quot;--dry-run&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Run without updating the wallbox&quot;</span>
@@ -1656,7 +1712,9 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/mqtt_config.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
@@ -1679,15 +1737,7 @@
 <span class="normal">70</span>
 <span class="normal">71</span>
 <span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">addArgs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add command line arguments for MqttConfig to the given parser.</span>
@@ -1709,12 +1759,6 @@
     <span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--mqtt-password&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;MQTT password&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">mqtt_password</span>
-    <span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;--update-interval&quot;</span><span class="p">,</span>
-        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
-        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimum update interval in seconds&quot;</span><span class="p">,</span>
-        <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--dry-run&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Run without updating the wallbox&quot;</span>
@@ -1795,7 +1839,8 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/mqtt_config.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">25</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+<span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
@@ -1816,9 +1861,7 @@
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">ofArgs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Namespace</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a configuration from command line arguments.</span>
@@ -1838,7 +1881,6 @@
             <span class="n">mqtt_topic</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_topic</span><span class="p">,</span>
             <span class="n">mqtt_username</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_username</span><span class="p">,</span>
             <span class="n">mqtt_password</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">mqtt_password</span><span class="p">,</span>
-            <span class="n">update_interval</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
             <span class="n">dry_run</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">config</span>
@@ -1877,7 +1919,7 @@
 
     <div class="doc doc-contents ">
 
-      <p>Created on 09.05.2025</p>
+      <p>Created on 2025-05-09</p>
 <p>@author: wf</p>
 
 
@@ -1955,7 +1997,7 @@
 
         <span class="c1"># Power in watts</span>
         <span class="n">active_power</span> <span class="o">=</span> <span class="p">(</span><span class="n">energy_delta</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">time_delta</span>
-        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">active_power</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">active_power</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -2029,7 +2071,7 @@
 
     <span class="c1"># Power in watts</span>
     <span class="n">active_power</span> <span class="o">=</span> <span class="p">(</span><span class="n">energy_delta</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">time_delta</span>
-    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">active_power</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">active_power</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2062,32 +2104,7 @@
 
               <details class="quote">
                 <summary>Source code in <code>warp/warp3.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
@@ -2175,12 +2192,75 @@
 <span class="normal">264</span>
 <span class="normal">265</span>
 <span class="normal">266</span>
-<span class="normal">267</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PowerMeter</span><span class="p">:</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PowerMeter</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Active power meter for Warp3 Wallbox&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        constructor</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">setup_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">level</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span> <span class="k">if</span> <span class="n">debug</span> <span class="k">else</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
@@ -2191,26 +2271,40 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">check_warp3_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check Warp3 version and meter config&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">schedule_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Schedule next update using a timer&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_update</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">check_warp3_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check availability of Warp3 API by verifying firmware version and meter configuration.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            True if both firmware info and meter config are available, else False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Check version</span>
         <span class="n">version_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">version_info</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;❌ Cannot connect to Warp3 API&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">available</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">firmware</span> <span class="o">=</span> <span class="n">version_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;firmware&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Connected to Warp3 - Firmware version: </span><span class="si">{</span><span class="n">firmware</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-        <span class="n">firmware</span> <span class="o">=</span> <span class="n">version_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;firmware&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Connected to Warp3 - Firmware version: </span><span class="si">{</span><span class="n">firmware</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="c1"># Check meter</span>
+            <span class="n">meter_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span>
+            <span class="n">meter_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_meter_config</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">meter_config</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> not available&quot;</span><span class="p">)</span>
+                <span class="n">available</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">description</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">describe_meter</span><span class="p">(</span><span class="n">meter_config</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">available</span> <span class="o">=</span> <span class="kc">True</span>
 
-        <span class="c1"># Check meter</span>
-        <span class="n">meter_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span>
-        <span class="n">meter_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_meter_config</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">meter_config</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> not available&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="kc">False</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> configured successfully&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">available</span>
 
     <span class="k">def</span> <span class="nf">handle_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle incoming MQTT message&quot;&quot;&quot;</span>
@@ -2227,11 +2321,20 @@
     <span class="k">def</span> <span class="nf">update_wallbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">power_value</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Send power value to wallbox&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Power value: </span><span class="si">{</span><span class="n">power_value</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span> <span class="o">=</span> <span class="n">power_value</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">send_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Send latest stored power value to wallbox</span>
+<span class="sd">        this is called regularly as per the scheduled interval</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span><span class="p">:</span>
+            <span class="n">power_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span>
+        <span class="k">if</span> <span class="n">power_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">update_meter</span><span class="p">(</span><span class="n">power_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DRY RUN: would update to </span><span class="si">{</span><span class="n">power_value</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">)</span>
+        <span class="c1">#re-schedule</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule_update</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Start the power meter&quot;&quot;&quot;</span>
@@ -2253,6 +2356,9 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_warp3_availability</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Cannot connect to Warp3 - exiting&quot;</span><span class="p">)</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule_update</span><span class="p">()</span>
 
         <span class="c1"># Create and run client</span>
         <span class="n">client</span> <span class="o">=</span> <span class="n">MqttClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_message</span><span class="p">)</span>
@@ -2307,6 +2413,44 @@
 <div class="doc doc-object doc-function">
 
 
+<h4 id="warp.warp3.PowerMeter.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+      <p>constructor</p>
+
+            <details class="quote">
+              <summary>Source code in <code>warp/warp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    constructor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="warp.warp3.PowerMeter.check_warp3_availability" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">check_warp3_availability</span><span class="p">()</span></code>
 
@@ -2315,49 +2459,88 @@
 
     <div class="doc doc-contents ">
 
-      <p>Check Warp3 version and meter config</p>
+      <p>Check availability of Warp3 API by verifying firmware version and meter configuration.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>True if both firmware info and meter config are available, else False.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
-<span class="normal">173</span>
-<span class="normal">174</span>
-<span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span>
-<span class="normal">179</span>
-<span class="normal">180</span>
-<span class="normal">181</span>
-<span class="normal">182</span>
-<span class="normal">183</span>
-<span class="normal">184</span>
-<span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_warp3_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check Warp3 version and meter config&quot;&quot;&quot;</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_warp3_availability</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check availability of Warp3 API by verifying firmware version and meter configuration.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        True if both firmware info and meter config are available, else False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Check version</span>
     <span class="n">version_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">version_info</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;❌ Cannot connect to Warp3 API&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">available</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">firmware</span> <span class="o">=</span> <span class="n">version_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;firmware&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Connected to Warp3 - Firmware version: </span><span class="si">{</span><span class="n">firmware</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="n">firmware</span> <span class="o">=</span> <span class="n">version_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;firmware&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Connected to Warp3 - Firmware version: </span><span class="si">{</span><span class="n">firmware</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Check meter</span>
+        <span class="n">meter_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span>
+        <span class="n">meter_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_meter_config</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">meter_config</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> not available&quot;</span><span class="p">)</span>
+            <span class="n">available</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">description</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">describe_meter</span><span class="p">(</span><span class="n">meter_config</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">available</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="c1"># Check meter</span>
-    <span class="n">meter_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span>
-    <span class="n">meter_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">get_meter_config</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">meter_config</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> not available&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2"> configured successfully&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">available</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2379,17 +2562,17 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">handle_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">handle_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Handle incoming MQTT message&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
@@ -2421,37 +2604,37 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">237</span>
-<span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
-<span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span>
-<span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span>
-<span class="normal">263</span>
-<span class="normal">264</span>
-<span class="normal">265</span>
-<span class="normal">266</span>
-<span class="normal">267</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">maininstance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">maininstance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Main instance setup and execution&quot;&quot;&quot;</span>
     <span class="c1"># Parse arguments</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
@@ -2491,6 +2674,79 @@
 <div class="doc doc-object doc-function">
 
 
+<h4 id="warp.warp3.PowerMeter.schedule_update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">schedule_update</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Schedule next update using a timer</p>
+
+            <details class="quote">
+              <summary>Source code in <code>warp/warp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">schedule_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Schedule next update using a timer&quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_update</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="warp.warp3.PowerMeter.send_update" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">send_update</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Send latest stored power value to wallbox
+this is called regularly as per the scheduled interval</p>
+
+            <details class="quote">
+              <summary>Source code in <code>warp/warp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">send_update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Send latest stored power value to wallbox</span>
+<span class="sd">    this is called regularly as per the scheduled interval</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span><span class="p">:</span>
+        <span class="n">power_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span>
+    <span class="k">if</span> <span class="n">power_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">update_meter</span><span class="p">(</span><span class="n">power_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span><span class="p">)</span>
+    <span class="c1">#re-schedule</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">schedule_update</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="warp.warp3.PowerMeter.start" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">start</span><span class="p">()</span></code>
 
@@ -2503,30 +2759,33 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
-<span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span>
-<span class="normal">234</span>
-<span class="normal">235</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Start the power meter&quot;&quot;&quot;</span>
     <span class="c1"># Set up logging</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">setup_logging</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
@@ -2546,6 +2805,9 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_warp3_availability</span><span class="p">():</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Cannot connect to Warp3 - exiting&quot;</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schedule_update</span><span class="p">()</span>
 
     <span class="c1"># Create and run client</span>
     <span class="n">client</span> <span class="o">=</span> <span class="n">MqttClient</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_message</span><span class="p">)</span>
@@ -2571,21 +2833,15 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_wallbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">power_value</span><span class="p">):</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_wallbox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">power_value</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Send power value to wallbox&quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Power value: </span><span class="si">{</span><span class="n">power_value</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_config</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">warp3_api</span><span class="o">.</span><span class="n">update_meter</span><span class="p">(</span><span class="n">power_value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wallbox_config</span><span class="o">.</span><span class="n">meter_id</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DRY RUN: would update to </span><span class="si">{</span><span class="n">power_value</span><span class="si">}</span><span class="s2">W&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_active_power_lock</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_latest_active_power</span> <span class="o">=</span> <span class="n">power_value</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2722,17 +2978,46 @@
 <span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lod_storable</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@lod_storable</span>
 <span class="k">class</span> <span class="nc">WallboxConfig</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for the Warp3 wallbox&quot;&quot;&quot;</span>
 
     <span class="n">wallbox_host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;http://warp3.mydomain&quot;</span>
     <span class="c1"># example Tasmota reading</span>
-    <span class="n">power_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;eHZ&quot;</span>  <span class="c1"># json tag for the payload content</span>
-    <span class="n">in_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;E_in&quot;</span>  <span class="c1"># field for energy input</span>
-    <span class="n">out_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;E_out&quot;</span>  <span class="c1"># field for energy output</span>
-    <span class="n">time_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span>  <span class="c1"># field for timestamp</span>
-    <span class="n">meter_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># id of the meter configured</span>
+    <span class="n">power_tag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;eHZ&quot;</span>        <span class="c1"># json tag for the payload content</span>
+    <span class="n">power_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Power2&quot;</span>   <span class="c1"># active power (always positive)</span>
+    <span class="n">in_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;E_in&quot;</span>        <span class="c1"># field for energy input</span>
+    <span class="n">out_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;E_out&quot;</span>      <span class="c1"># field for energy output</span>
+    <span class="n">time_field</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Time&quot;</span>      <span class="c1"># field for timestamp</span>
+    <span class="n">meter_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>             <span class="c1"># id of the meter configured</span>
+    <span class="n">update_interval</span><span class="p">:</span><span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>   <span class="c1"># how often the API should fed</span>
+
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">ofArgs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Namespace</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
@@ -2750,11 +3035,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">config</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
                 <span class="n">wallbox_host</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">wallbox_host</span><span class="p">,</span>
-                <span class="n">power_tag</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>  <span class="c1"># Added this</span>
-                <span class="n">in_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">in_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-                <span class="n">out_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-                <span class="n">time_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">time_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-                <span class="n">meter_id</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">meter_id</span><span class="p">,</span>  <span class="c1"># Added this</span>
+                <span class="n">power_tag</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>
+                <span class="n">power_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_field</span><span class="p">,</span>
+                <span class="n">in_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">in_field</span><span class="p">,</span>
+                <span class="n">out_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out_field</span><span class="p">,</span>
+                <span class="n">time_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">time_field</span><span class="p">,</span>
+                <span class="n">meter_id</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">meter_id</span><span class="p">,</span>
+                <span class="n">update_interval</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">config</span>
 
@@ -2775,6 +3062,11 @@
             <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;--power-field&quot;</span><span class="p">,</span>
+            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Field name in MQTT data containing active power value&quot;</span><span class="p">,</span>
+            <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">power_field</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
             <span class="s2">&quot;--in-field&quot;</span><span class="p">,</span>
             <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Field name in MQTT data containing energy input&quot;</span><span class="p">,</span>
             <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">in_field</span><span class="p">,</span>
@@ -2792,6 +3084,12 @@
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
             <span class="s2">&quot;--meter-id&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Meter ID to use&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">meter_id</span>
         <span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;--update-interval&quot;</span><span class="p">,</span>
+            <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimum update interval in seconds&quot;</span><span class="p">,</span>
+            <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">ofYaml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">yaml_path</span><span class="p">):</span>
@@ -2808,25 +3106,35 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            float: Calculated power in watts</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># get the timestamp</span>
+        <span class="n">timestamp_str</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_field</span><span class="p">)</span>
         <span class="c1"># Get the data from the payload</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span> <span class="p">{})</span>
 
         <span class="c1"># Extract values</span>
         <span class="n">e_in</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_field</span><span class="p">)</span>
         <span class="n">e_out</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_field</span><span class="p">)</span>
-        <span class="n">timestamp_str</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_field</span><span class="p">)</span>
+        <span class="n">power_magnitude</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_field</span><span class="p">)</span>
 
         <span class="c1"># Create current reading</span>
         <span class="n">current</span> <span class="o">=</span> <span class="n">MeterReading</span><span class="p">(</span><span class="n">kWh_in</span><span class="o">=</span><span class="n">e_in</span><span class="p">,</span> <span class="n">kWh_out</span><span class="o">=</span><span class="n">e_out</span><span class="p">,</span> <span class="n">time_stamp</span><span class="o">=</span><span class="n">timestamp_str</span><span class="p">)</span>
-
         <span class="c1"># If we don&#39;t have a previous reading, store this one and return fallback power</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_last_reading&quot;</span><span class="p">):</span>
-            <span class="n">power</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">active_power</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">power</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">active_power</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="p">)</span>
+            <span class="c1"># calc power roughly from meter reading</span>
+            <span class="n">active_power</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">active_power</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="p">)</span>
+            <span class="c1"># if we have a precise power magnitude we will use it:</span>
+            <span class="k">if</span> <span class="n">power_magnitude</span><span class="p">:</span>
+                <span class="n">delta_in</span> <span class="o">=</span> <span class="n">e_in</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="o">.</span><span class="n">kWh_in</span>
+                <span class="n">delta_out</span> <span class="o">=</span> <span class="n">e_out</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="o">.</span><span class="n">kWh_out</span>
+                <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">delta_in</span> <span class="o">&gt;=</span> <span class="n">delta_out</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="n">active_power</span><span class="o">=</span><span class="n">sign</span><span class="o">*</span><span class="n">power_magnitude</span>
+            <span class="n">active_power</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">active_power</span><span class="p">)</span>
+
         <span class="c1"># Update stored reading</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span> <span class="o">=</span> <span class="n">current</span>
-        <span class="k">return</span> <span class="n">power</span>
+        <span class="k">return</span> <span class="n">active_power</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -2889,12 +3197,7 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
 <span class="normal"> 89</span>
 <span class="normal"> 90</span>
 <span class="normal"> 91</span>
@@ -2922,7 +3225,23 @@
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
-<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">addArgs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add command line arguments for WallboxConfig to the given parser.</span>
@@ -2937,6 +3256,11 @@
         <span class="s2">&quot;--power-tag&quot;</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Tag in MQTT data containing power information&quot;</span><span class="p">,</span>
         <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--power-field&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Field name in MQTT data containing active power value&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">power_field</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--in-field&quot;</span><span class="p">,</span>
@@ -2955,6 +3279,12 @@
     <span class="p">)</span>
     <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--meter-id&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Meter ID to use&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">meter_id</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--update-interval&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Minimum update interval in seconds&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="bp">cls</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -3028,23 +3358,7 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">139</span>
 <span class="normal">140</span>
 <span class="normal">141</span>
 <span class="normal">142</span>
@@ -3056,7 +3370,33 @@
 <span class="normal">148</span>
 <span class="normal">149</span>
 <span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calcPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate power from payload using MeterReading class.</span>
 
@@ -3066,25 +3406,35 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        float: Calculated power in watts</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get the timestamp</span>
+    <span class="n">timestamp_str</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_field</span><span class="p">)</span>
     <span class="c1"># Get the data from the payload</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span> <span class="p">{})</span>
 
     <span class="c1"># Extract values</span>
     <span class="n">e_in</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_field</span><span class="p">)</span>
     <span class="n">e_out</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_field</span><span class="p">)</span>
-    <span class="n">timestamp_str</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_field</span><span class="p">)</span>
+    <span class="n">power_magnitude</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">power_field</span><span class="p">)</span>
 
     <span class="c1"># Create current reading</span>
     <span class="n">current</span> <span class="o">=</span> <span class="n">MeterReading</span><span class="p">(</span><span class="n">kWh_in</span><span class="o">=</span><span class="n">e_in</span><span class="p">,</span> <span class="n">kWh_out</span><span class="o">=</span><span class="n">e_out</span><span class="p">,</span> <span class="n">time_stamp</span><span class="o">=</span><span class="n">timestamp_str</span><span class="p">)</span>
-
     <span class="c1"># If we don&#39;t have a previous reading, store this one and return fallback power</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_last_reading&quot;</span><span class="p">):</span>
-        <span class="n">power</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">active_power</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">power</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">active_power</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="p">)</span>
+        <span class="c1"># calc power roughly from meter reading</span>
+        <span class="n">active_power</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">active_power</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="p">)</span>
+        <span class="c1"># if we have a precise power magnitude we will use it:</span>
+        <span class="k">if</span> <span class="n">power_magnitude</span><span class="p">:</span>
+            <span class="n">delta_in</span> <span class="o">=</span> <span class="n">e_in</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="o">.</span><span class="n">kWh_in</span>
+            <span class="n">delta_out</span> <span class="o">=</span> <span class="n">e_out</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span><span class="o">.</span><span class="n">kWh_out</span>
+            <span class="n">sign</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">delta_in</span> <span class="o">&gt;=</span> <span class="n">delta_out</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">active_power</span><span class="o">=</span><span class="n">sign</span><span class="o">*</span><span class="n">power_magnitude</span>
+        <span class="n">active_power</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">active_power</span><span class="p">)</span>
+
     <span class="c1"># Update stored reading</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_last_reading</span> <span class="o">=</span> <span class="n">current</span>
-    <span class="k">return</span> <span class="n">power</span>
+    <span class="k">return</span> <span class="n">active_power</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -3161,10 +3511,7 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
@@ -3183,7 +3530,12 @@
 <span class="normal">78</span>
 <span class="normal">79</span>
 <span class="normal">80</span>
-<span class="normal">81</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">ofArgs</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Namespace</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a configuration from command line arguments.</span>
@@ -3199,11 +3551,13 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">config</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">wallbox_host</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">wallbox_host</span><span class="p">,</span>
-            <span class="n">power_tag</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>  <span class="c1"># Added this</span>
-            <span class="n">in_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">in_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-            <span class="n">out_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-            <span class="n">time_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">time_field</span><span class="p">,</span>  <span class="c1"># Added new field</span>
-            <span class="n">meter_id</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">meter_id</span><span class="p">,</span>  <span class="c1"># Added this</span>
+            <span class="n">power_tag</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_tag</span><span class="p">,</span>
+            <span class="n">power_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">power_field</span><span class="p">,</span>
+            <span class="n">in_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">in_field</span><span class="p">,</span>
+            <span class="n">out_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out_field</span><span class="p">,</span>
+            <span class="n">time_field</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">time_field</span><span class="p">,</span>
+            <span class="n">meter_id</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">meter_id</span><span class="p">,</span>
+            <span class="n">update_interval</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">update_interval</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">config</span>
 </code></pre></div></td></tr></table></div>
@@ -3236,10 +3590,10 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Main entry point&quot;&quot;&quot;</span>
     <span class="n">pm</span> <span class="o">=</span> <span class="n">PowerMeter</span><span class="p">()</span>
     <span class="n">pm</span><span class="o">.</span><span class="n">maininstance</span><span class="p">()</span>
@@ -3301,73 +3655,142 @@
 
               <details class="quote">
                 <summary>Source code in <code>warp/warp3_api.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Warp3Api</span><span class="p">:</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Warp3Api</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;API client for TinkerForge/Warp3 Wallbox&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize with wallbox host&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="o">=</span><span class="p">{}</span>
 
     <span class="k">def</span> <span class="nf">api_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -3415,13 +3838,80 @@
             <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/meters/</span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2">/update&quot;</span>
             <span class="n">http_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">http_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">http_response</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> Watt set&quot;</span><span class="p">)</span>
+
+                <span class="n">prev</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">prev</span> <span class="ow">or</span> <span class="n">prev</span><span class="o">!=</span><span class="n">value</span><span class="p">:</span>
+                    <span class="n">msg</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> Watt set for meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="p">[</span><span class="n">meter_id</span><span class="p">]</span><span class="o">=</span><span class="n">value</span>
                 <span class="n">update_success</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Failed to update: </span><span class="si">{</span><span class="n">http_response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error updating meter: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">update_success</span>
+
+    <span class="k">def</span> <span class="nf">describe_meter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meter</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Describe the meter configuration using value_id explanations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            meter: The meter configuration dictionary.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A human-readable description string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+        <span class="n">value_ids</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_ids&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">values_explained</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">explain_value_id</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="n">value_ids</span>
+        <span class="p">)</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Meter &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; at location </span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s2"> measures: </span><span class="si">{</span><span class="n">values_explained</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">description</span>
+
+    <span class="k">def</span> <span class="nf">explain_value_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">value_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">explanations</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Spannung L1-N&quot;</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Spannung L2-N&quot;</span><span class="p">,</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;Spannung L3-N&quot;</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Spannung L1-L2&quot;</span><span class="p">,</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot;Spannung L2-L3&quot;</span><span class="p">,</span>
+            <span class="mi">6</span><span class="p">:</span> <span class="s2">&quot;Spannung L3-L1&quot;</span><span class="p">,</span>
+            <span class="mi">7</span><span class="p">:</span> <span class="s2">&quot;Durchschnittliche Phasenspannung&quot;</span><span class="p">,</span>
+            <span class="mi">8</span><span class="p">:</span> <span class="s2">&quot;Durchschnitt Spannung L1-L2, L2-L3, L3-L1&quot;</span><span class="p">,</span>
+            <span class="mi">13</span><span class="p">:</span> <span class="s2">&quot;Strom (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">17</span><span class="p">:</span> <span class="s2">&quot;Strom (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">21</span><span class="p">:</span> <span class="s2">&quot;Strom (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">25</span><span class="p">:</span> <span class="s2">&quot;Neutralleiterstrom&quot;</span><span class="p">,</span>
+            <span class="mi">29</span><span class="p">:</span> <span class="s2">&quot;Durchschnitt der Phasenströme&quot;</span><span class="p">,</span>
+            <span class="mi">33</span><span class="p">:</span> <span class="s2">&quot;Summe der Phasenströme&quot;</span><span class="p">,</span>
+            <span class="mi">39</span><span class="p">:</span> <span class="s2">&quot;Wirkleistung (Bezug - Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">48</span><span class="p">:</span> <span class="s2">&quot;Wirkleistung (Bezug - Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">57</span><span class="p">:</span> <span class="s2">&quot;Wirkleistung (Bezug - Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">74</span><span class="p">:</span> <span class="s2">&quot;Summe der Phasenwirkleistungen (Bezug - Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">83</span><span class="p">:</span> <span class="s2">&quot;Blindleistung (induktiv - kapazitiv)&quot;</span><span class="p">,</span>
+            <span class="mi">91</span><span class="p">:</span> <span class="s2">&quot;Blindleistung (induktiv - kapazitiv)&quot;</span><span class="p">,</span>
+            <span class="mi">99</span><span class="p">:</span> <span class="s2">&quot;Blindleistung (induktiv - kapazitiv)&quot;</span><span class="p">,</span>
+            <span class="mi">115</span><span class="p">:</span> <span class="s2">&quot;Summe der Phasenblindleistungen&quot;</span><span class="p">,</span>
+            <span class="mi">122</span><span class="p">:</span> <span class="s2">&quot;Scheinleistung (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">130</span><span class="p">:</span> <span class="s2">&quot;Scheinleistung (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">138</span><span class="p">:</span> <span class="s2">&quot;Scheinleistung (Bezug + Einspeisung)&quot;</span><span class="p">,</span>
+            <span class="mi">154</span><span class="p">:</span> <span class="s2">&quot;Summe der Phasenscheinleistungen&quot;</span><span class="p">,</span>
+            <span class="mi">209</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Bezug (seit Herstellung)&quot;</span><span class="p">,</span>
+            <span class="mi">210</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Bezug (seit letztem Zurücksetzen)&quot;</span><span class="p">,</span>
+            <span class="mi">211</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Einspeisung (seit Herstellung)&quot;</span><span class="p">,</span>
+            <span class="mi">212</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Einspeisung (seit letztem Zurücksetzen)&quot;</span><span class="p">,</span>
+            <span class="mi">213</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Bezug + Einspeisung (seit Herstellung)&quot;</span><span class="p">,</span>
+            <span class="mi">214</span><span class="p">:</span> <span class="s2">&quot;Wirkenergie Bezug + Einspeisung (seit letztem Zurücksetzen)&quot;</span><span class="p">,</span>
+            <span class="mi">277</span><span class="p">:</span> <span class="s2">&quot;Blindenergie induktiv + kapazitiv (seit Herstellung)&quot;</span><span class="p">,</span>
+            <span class="mi">353</span><span class="p">:</span> <span class="s2">&quot;Leistungsfaktor (gerichtet)&quot;</span><span class="p">,</span>
+            <span class="mi">354</span><span class="p">:</span> <span class="s2">&quot;Leistungsfaktor (gerichtet)&quot;</span><span class="p">,</span>
+            <span class="mi">355</span><span class="p">:</span> <span class="s2">&quot;Leistungsfaktor (gerichtet)&quot;</span><span class="p">,</span>
+            <span class="mi">356</span><span class="p">:</span> <span class="s2">&quot;Summe der gerichteten Leistungsfaktoren&quot;</span><span class="p">,</span>
+            <span class="mi">364</span><span class="p">:</span> <span class="s2">&quot;Netzfrequenz&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">explanations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value_id</span><span class="p">,</span> <span class="s2">&quot;Unknown value_id&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -3455,10 +3945,12 @@
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize with wallbox host&quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="o">=</span><span class="p">{}</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -3530,8 +4022,7 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3_api.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">20</span>
-<span class="normal">21</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -3548,7 +4039,8 @@
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">api_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">api_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Call the wallbox API with the given command and filter the JSON result</span>
 
@@ -3576,6 +4068,114 @@
 <div class="doc doc-object doc-function">
 
 
+<h4 id="warp.warp3_api.Warp3Api.describe_meter" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">describe_meter</span><span class="p">(</span><span class="n">meter</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Describe the meter configuration using value_id explanations.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>meter</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The meter configuration dictionary.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A human-readable description string.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>warp/warp3_api.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">describe_meter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meter</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Describe the meter configuration using value_id explanations.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        meter: The meter configuration dictionary.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A human-readable description string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">)</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+    <span class="n">value_ids</span> <span class="o">=</span> <span class="n">meter</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;value_ids&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">values_explained</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vid</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">explain_value_id</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="n">value_ids</span>
+    <span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Meter &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; at location </span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s2"> measures: </span><span class="si">{</span><span class="n">values_explained</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">description</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="warp.warp3_api.Warp3Api.get_meter_config" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">get_meter_config</span><span class="p">(</span><span class="n">meter_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
@@ -3588,10 +4188,10 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3_api.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
-<span class="normal">46</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
 <span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_meter_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meter_id</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_meter_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">meter_id</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get meter configuration&quot;&quot;&quot;</span>
     <span class="n">meter_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;meters/</span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2">/config&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">meter_config</span>
@@ -3616,10 +4216,10 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3_api.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
-<span class="normal">41</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
 <span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get wallbox firmware version&quot;&quot;&quot;</span>
     <span class="n">version_info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_get</span><span class="p">(</span><span class="s2">&quot;info/version&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">version_info</span>
@@ -3707,8 +4307,7 @@
 
             <details class="quote">
               <summary>Source code in <code>warp/warp3_api.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">50</span>
-<span class="normal">51</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
@@ -3729,7 +4328,13 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_meter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">meter_id</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">update_meter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">meter_id</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Update meter value</span>
 
@@ -3745,7 +4350,12 @@
         <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="si">}</span><span class="s2">/meters/</span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2">/update&quot;</span>
         <span class="n">http_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">http_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">http_response</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> Watt set&quot;</span><span class="p">)</span>
+
+            <span class="n">prev</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">meter_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">prev</span> <span class="ow">or</span> <span class="n">prev</span><span class="o">!=</span><span class="n">value</span><span class="p">:</span>
+                <span class="n">msg</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> Watt set for meter </span><span class="si">{</span><span class="n">meter_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meter_values</span><span class="p">[</span><span class="n">meter_id</span><span class="p">]</span><span class="o">=</span><span class="n">value</span>
             <span class="n">update_success</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Failed to update: </span><span class="si">{</span><span class="n">http_response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
