@@ -7,7 +7,7 @@ Created on 09.05.2025
 from argparse import Namespace
 from typing import Optional
 
-from lodstorage.yamlable import lod_storable
+from basemkit.yamlable import lod_storable
 
 
 @lod_storable
