@@ -12,7 +12,7 @@ from argparse import Namespace
 from dataclasses import dataclass
 from datetime import datetime
 import threading
-from lodstorage.yamlable import lod_storable
+from basemkit.yamlable import lod_storable
 
 from warp.mqtt_client import MqttClient
 from warp.mqtt_config import MqttConfig
